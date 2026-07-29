@@ -15,9 +15,9 @@
     --offwhite:#F0ECE3;
     --green:#C4933F;
     --green-dark:#A67C32;
-    --orange:#8E2F48;
+    --orange:#C4933F;
     --border:#1E2230;
-    --muted:#64687A;
+    --muted:#52566A;
     --card:#161921;
     --pill:#1C1F2A;
     --radius:16px;
@@ -93,15 +93,15 @@
   .stat .big{font-family:"Fraunces",serif;font-size:42px;font-weight:500;letter-spacing:-1.5px;line-height:1;margin:14px 0 6px}
   .stat .foot{font-size:13px;color:var(--muted)}
   .stat .foot b{color:var(--ink);font-weight:600}
-  .stat.today{background:linear-gradient(135deg,#1C2B1A,#1A2E22);border-color:#2D4A35;color:var(--offwhite)}
-  .stat.today .label{color:rgba(196,147,63,.8)}
+  .stat.today{background:var(--card);border-color:var(--border);color:var(--offwhite)}
+  .stat.today .label{color:var(--muted)}
   .stat.today .big{color:var(--green)}
-  .stat.today .foot{color:rgba(240,236,227,.6)}
-  .stat.today .foot b{color:var(--offwhite)}
-  .stat.revenue{background:linear-gradient(135deg,#1F1218,#2A1220);border-color:#3A1A28;color:var(--offwhite)}
-  .stat.revenue .label{color:rgba(196,147,63,.8)}
+  .stat.today .foot{color:var(--muted)}
+  .stat.today .foot b{color:var(--ink)}
+  .stat.revenue{background:var(--card);border-color:var(--border);color:var(--offwhite)}
+  .stat.revenue .label{color:var(--muted)}
   .stat.revenue .big{color:var(--green);font-size:34px}
-  .stat.revenue .foot{color:rgba(240,236,227,.6)}
+  .stat.revenue .foot{color:var(--muted)}
 
   /* Layout columns */
   .grid{display:grid;grid-template-columns:1fr 360px;gap:22px;align-items:start}
@@ -174,8 +174,8 @@
   .appt .info .sv{font-size:13px;color:var(--muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .badge{font-size:10.5px;letter-spacing:1px;text-transform:uppercase;font-weight:600;padding:5px 11px;border-radius:20px;flex-shrink:0}
   .badge.scheduled{background:#1C1E2A;color:var(--muted);border:1px solid var(--border)}
-  .badge.completed{background:#1A2518;color:var(--green);border:1px solid rgba(196,147,63,.2)}
-  .badge.cancelled{background:#221016;color:#C4566A;border:1px solid rgba(142,47,72,.3)}
+  .badge.completed{background:#1E1C16;color:var(--green);border:1px solid rgba(196,147,63,.2)}
+  .badge.cancelled{background:#1C1E2A;color:var(--muted);border:1px solid var(--border)}
   .price-tag{font-family:"DM Mono",monospace;font-size:13px;font-weight:500;color:var(--green);flex-shrink:0;min-width:44px;text-align:right}
   .row-actions{display:flex;gap:4px;opacity:0;transition:opacity .15s;flex-shrink:0}
   .appt:hover .row-actions{opacity:1}
@@ -184,7 +184,7 @@
   .act:hover{background:#1E2230;color:var(--ink)}
   .act svg{width:16px;height:16px}
   .act.done:hover{color:var(--green)}
-  .act.del:hover{color:#C4566A}
+  .act.del:hover{color:var(--muted)}
 
   .empty{text-align:center;padding:40px 20px}
   .empty .circle{width:56px;height:56px;border-radius:50%;background:#1E2130;border:1px solid rgba(196,147,63,.2);display:inline-flex;align-items:center;justify-content:center;color:var(--green);margin-bottom:16px}
@@ -193,11 +193,11 @@
   .empty .s{font-size:13px;color:var(--muted)}
 
   /* Right column */
-  .next-card{background:linear-gradient(135deg,#1A1608,#22190A);border:1px solid rgba(196,147,63,.25);color:var(--offwhite);border-radius:var(--radius);padding:24px;margin-bottom:22px}
-  .next-card .label{font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:rgba(196,147,63,.7);margin-bottom:18px}
+  .next-card{background:var(--card);border:1px solid rgba(196,147,63,.2);color:var(--offwhite);border-radius:var(--radius);padding:24px;margin-bottom:22px}
+  .next-card .label{font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
   .next-card .big{font-family:"Fraunces",serif;font-size:44px;font-weight:500;letter-spacing:-1.5px;line-height:1;color:var(--green)}
   .next-card .nm{font-weight:600;font-size:16px;margin-top:14px}
-  .next-card .sv{font-size:13px;color:rgba(240,236,227,.6);margin-top:4px}
+  .next-card .sv{font-size:13px;color:var(--muted);margin-top:4px}
   .progress{height:6px;border-radius:6px;background:rgba(196,147,63,.15);margin-top:20px;overflow:hidden}
   .progress .bar{height:100%;background:var(--green);border-radius:6px}
   .next-card.empty-next .big{font-size:44px}
@@ -253,8 +253,8 @@
   .hist-price{font-family:"DM Mono",monospace;font-size:13px;font-weight:500;flex-shrink:0}
   .hist-badge{font-size:10px;letter-spacing:.8px;text-transform:uppercase;font-weight:600;padding:3px 8px;border-radius:20px;flex-shrink:0}
   .hist-badge.scheduled{background:#1C1E2A;color:var(--muted);border:1px solid var(--border)}
-  .hist-badge.completed{background:#1A2518;color:var(--green);border:1px solid rgba(196,147,63,.2)}
-  .hist-badge.cancelled{background:#221016;color:#C4566A;border:1px solid rgba(142,47,72,.3)}
+  .hist-badge.completed{background:#1E1C16;color:var(--green);border:1px solid rgba(196,147,63,.2)}
+  .hist-badge.cancelled{background:#1C1E2A;color:var(--muted);border:1px solid var(--border)}
   .client-summary-boxes{display:flex;gap:12px;margin-bottom:8px}
   .cs-box{flex:1;background:#12141C;border:1px solid var(--border);border-radius:12px;padding:16px;text-align:center}
   .cs-box .v{font-family:"Fraunces",serif;font-size:28px;font-weight:500;letter-spacing:-.5px}
