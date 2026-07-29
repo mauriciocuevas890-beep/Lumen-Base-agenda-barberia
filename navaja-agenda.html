@@ -260,6 +260,76 @@
   .cs-box .v{font-family:"Fraunces",serif;font-size:28px;font-weight:500;letter-spacing:-.5px}
   .cs-box .k{font-size:10.5px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-top:4px}
 
+  /* ---------- Transición de tema ---------- */
+  body, .sidebar, .card, .modal, .stat, .next-card, .chip,
+  .appt, .badge, .avatar, .avatar-lg, .week .col, .mcell,
+  .client-card, .cs-box, .filter-menu, .overlay{
+    transition: background .25s ease, border-color .25s ease, color .2s ease;
+  }
+
+  /* ---------- Tema claro ---------- */
+  [data-theme="light"]{
+    --cream: #F2F0EB;
+    --ink: #1A1C24;
+    --sidebar: #1A1C24;
+    --offwhite: #F0ECE3;
+    --green: #A67830;
+    --green-dark: #8A6226;
+    --orange: #A67830;
+    --border: #E0DDD6;
+    --muted: #8A8A9A;
+    --card: #FFFFFF;
+    --pill: #E8E6E0;
+    --shadow: 0 1px 4px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.1);
+  }
+  [data-theme="light"] .week .col:hover{background:#F7F5F0}
+  [data-theme="light"] .week .col.sel{background:#EDE9E1}
+  [data-theme="light"] .month-dow{background:#F7F5F0}
+  [data-theme="light"] .mcell:hover{background:#F7F5F0}
+  [data-theme="light"] .mcell.sel{background:#EDE9E1}
+  [data-theme="light"] .mcell.out{background:#F9F8F4;color:var(--muted)}
+  [data-theme="light"] .chip{background:#FFFFFF;border-color:var(--border)}
+  [data-theme="light"] .avatar{background:#EDE9E1;border-color:rgba(166,120,48,.2)}
+  [data-theme="light"] .avatar-lg{background:#EDE9E1;border-color:rgba(166,120,48,.2)}
+  [data-theme="light"] .badge.scheduled{background:#ECEAE4;color:#6B6878;border-color:var(--border)}
+  [data-theme="light"] .badge.completed{background:#FBF4E6;color:var(--green);border-color:rgba(166,120,48,.3)}
+  [data-theme="light"] .badge.cancelled{background:#ECEAE4;color:#6B6878;border-color:var(--border)}
+  [data-theme="light"] .hist-badge.scheduled{background:#ECEAE4;color:#6B6878;border-color:var(--border)}
+  [data-theme="light"] .hist-badge.completed{background:#FBF4E6;color:var(--green);border-color:rgba(166,120,48,.3)}
+  [data-theme="light"] .hist-badge.cancelled{background:#ECEAE4;color:#6B6878;border-color:var(--border)}
+  [data-theme="light"] .act:hover{background:#EDE9E1;color:var(--ink)}
+  [data-theme="light"] .act.del:hover{color:#8A8A9A}
+  [data-theme="light"] .empty .circle{background:#EDE9E1;border-color:rgba(166,120,48,.2)}
+  [data-theme="light"] .next-card{background:#FFFFFF;border-color:rgba(166,120,48,.25)}
+  [data-theme="light"] .next-card .sv{color:var(--muted)}
+  [data-theme="light"] .next-card .label{color:var(--muted)}
+  [data-theme="light"] .progress{background:rgba(166,120,48,.12)}
+  [data-theme="light"] .filter-menu button:hover{background:#EDE9E1}
+  [data-theme="light"] .icon-btn:hover{background:#EDE9E1}
+  [data-theme="light"] .round-btn:hover{background:#EDE9E1}
+  [data-theme="light"] .close:hover{background:#EDE9E1}
+  [data-theme="light"] .btn-ghost:hover{background:#EDE9E1}
+  [data-theme="light"] .client-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.1);border-color:rgba(166,120,48,.3)}
+  [data-theme="light"] .cs-box{background:#F7F5F0;border-color:var(--border)}
+  [data-theme="light"] .stat.today .big{color:var(--green)}
+  [data-theme="light"] .stat.revenue .big{color:var(--green)}
+  [data-theme="light"] .side-note{background:rgba(166,120,48,.06);border-color:rgba(166,120,48,.15)}
+  [data-theme="light"] .nav-item.active{background:rgba(166,120,48,.15)}
+  [data-theme="light"] .nav-item.active::before{background:var(--green)}
+
+  /* Botón tema */
+  .theme-btn{
+    width:46px;height:46px;border-radius:12px;border:1px solid var(--border);background:var(--card);
+    display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--ink);
+    transition:background .15s,border-color .15s;
+  }
+  .theme-btn:hover{background:var(--pill)}
+  .theme-btn svg{width:18px;height:18px}
+  .icon-sun{display:none}
+  .icon-moon{display:block}
+  [data-theme="light"] .icon-sun{display:block}
+  [data-theme="light"] .icon-moon{display:none}
+
   @media(max-width:1080px){
     .grid{grid-template-columns:1fr}
     .stats{grid-template-columns:repeat(2,1fr)}
@@ -318,6 +388,12 @@
         <div class="top-actions">
           <button class="icon-btn" id="filterBtn" title="Filtrar citas">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+          </button>
+          <button class="theme-btn" id="themeBtn" title="Cambiar tema">
+            <!-- Sol (tema claro activo) -->
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg>
+            <!-- Luna (tema oscuro activo) -->
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
           </button>
           <button class="btn-primary" id="newBtn">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
@@ -966,6 +1042,18 @@ function shift(dir){
   else r.setMonth(r.getMonth()+dir);
   state.periodRef=r; render();
 }
+// ---------- theme toggle ----------
+(function(){
+  const saved = localStorage.getItem("lumen.theme") || "dark";
+  if(saved === "light") document.documentElement.setAttribute("data-theme","light");
+})();
+
+document.getElementById("themeBtn").addEventListener("click",()=>{
+  const isLight = document.documentElement.getAttribute("data-theme") === "light";
+  const next = isLight ? "dark" : "light";
+  document.documentElement.setAttribute("data-theme", next);
+  localStorage.setItem("lumen.theme", next);
+});
 
 render();
 </script>
