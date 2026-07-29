@@ -39,11 +39,8 @@
     width:264px;flex-shrink:0;background:var(--sidebar);color:var(--offwhite);
     display:flex;flex-direction:column;padding:26px 20px;position:sticky;top:0;height:100vh;
   }
-  .brand{display:flex;align-items:center;gap:13px;margin-bottom:40px}
-  .brand-mark{width:44px;height:44px;border-radius:11px;background:var(--orange);
-    display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0}
-  .brand-name{font-family:"Fraunces",serif;font-weight:600;font-size:23px;line-height:1;letter-spacing:-.5px}
-  .brand-sub{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(252,251,248,.5);margin-top:5px}
+  .brand{display:flex;align-items:center;justify-content:center;margin-bottom:40px;padding:0 10px}
+  .brand img{max-width:100%;height:auto;max-height:80px;object-fit:contain}
   .nav-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(252,251,248,.4);margin:0 0 12px 6px}
   .nav-item{
     display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:none;border:none;cursor:pointer;
@@ -352,13 +349,7 @@
   <!-- Sidebar -->
   <aside class="sidebar">
     <div class="brand">
-      <div class="brand-mark">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
-      </div>
-      <div>
-        <div class="brand-name">Lumen</div>
-        <div class="brand-sub">Barber Agenda</div>
-      </div>
+      <img src="logo.png" alt="Lumen Base Logo" />
     </div>
     <div class="nav-label">Espacio de trabajo</div>
     <button class="nav-item active" id="agendaBtn">
